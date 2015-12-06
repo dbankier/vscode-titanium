@@ -1,0 +1,41 @@
+{
+	"name": "vscode-alloy-jast",
+	"displayName": "vscode-alloy-jast",
+	"description": "Titanium Alloy Tools for JAST",
+	"version": "0.1.0",
+	"publisher": "dbankier",
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.openRelativeJASTFiles"
+	],
+	"main": "./out/src/extension",
+	"contributes": {
+		"commands": [{
+			"command": "extension.openRelativeJASTFiles",
+			"title": "JAST: Open Relative Files"
+		}],
+    "keybindings": [
+			{
+				"command": "extension.openRelativeJASTFiles",
+				"key": "ctrl+l"
+			},
+			{
+				"command": "extension.openRelativeJASTFiles",
+				"key": "cmd+l"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./"
+	},
+	"devDependencies": {
+		"typescript": "^1.6.2",
+		"vscode": "0.10.x"
+	}
+}
