@@ -1,41 +1,83 @@
 {
-	"name": "vscode-alloy-jast",
-	"displayName": "vscode-alloy-jast",
-	"description": "Titanium Alloy Tools for JAST",
-	"version": "0.1.0",
-	"publisher": "dbankier",
-	"engines": {
-		"vscode": "^0.10.1"
-	},
-	"categories": [
-		"Other"
-	],
-	"activationEvents": [
-		"onCommand:extension.openRelativeJASTFiles"
-	],
-	"main": "./out/src/extension",
-	"contributes": {
-		"commands": [{
-			"command": "extension.openRelativeJASTFiles",
-			"title": "JAST: Open Relative Files"
-		}],
+  "name": "vscode-titanium",
+  "displayName": "Extension for Titanium, Alloy and JAST",
+  "description": "Extension for Titanium, Alloy and JAST",
+  "version": "0.2.0",
+  "publisher": "dbankier",
+  "engines": {
+    "vscode": "^0.10.1"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "workspaceContains:tiapp.xml"
+  ],
+  "main": "./out/src/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.openAlloyFiles",
+        "title": "Alloy: Open Relative Files"
+      },
+      {
+        "command": "extension.tiBuild",
+        "title": "Titanium: build"
+      },
+      {
+        "command": "extension.tiBuildShadow",
+        "title": "Titanium: shadow"
+      },
+      {
+        "command": "extension.tiBuildAppify",
+        "title": "Titanium: appify"
+      },
+      {
+        "command": "extension.tiClean",
+        "title": "Titanium: clean"
+      }
+    ],
     "keybindings": [
-			{
-				"command": "extension.openRelativeJASTFiles",
-				"key": "ctrl+l"
-			},
-			{
-				"command": "extension.openRelativeJASTFiles",
-				"key": "cmd+l"
-			}
-		]
-	},
-	"scripts": {
-		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
-		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./"
-	},
-	"devDependencies": {
-		"typescript": "^1.6.2",
-		"vscode": "0.10.x"
-	}
+      {
+        "command": "extension.openAlloyFiles",
+        "key": "ctrl+l"
+      },
+      {
+        "command": "extension.openAlloyFiles",
+        "key": "cmd+l"
+      }
+    ],
+    "configuration": {
+			"type": "object",
+			"title": "Alloy Configuration",
+			"properties": {
+				"alloy.style": {
+					"type": "string",
+					"default": ".stss",
+					"description": "Alloy style file extension"
+				},
+				"alloy.view": {
+					"type": "string",
+					"default": ".jade",
+					"description": "Alloy view file extension"
+				},
+				"alloy.controller": {
+					"type": "string",
+					"default": ".js",
+					"description": "Alloy controller file extension"
+				}
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+    "compile": "node ./node_modules/vscode/bin/compile -watch -p ./"
+  },
+  "devDependencies": {
+    "typescript": "^1.6.2",
+    "vscode": "0.10.x"
+  },
+  "dependencies": {
+    "shelljs": "^0.5.3"
+  }
 }

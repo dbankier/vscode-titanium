@@ -1,13 +1,81 @@
-# README
-## This is the README for your extension "vscode-alloy-jast" 
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+# vscode-titanium
 
-* Split the editor (`Cmd+\` on OSX or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on OSX or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (OSX) to see a list of Markdown snippets
+## Installation
 
-### For more information
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+Press <kbd>F1</kbd> and narrow down the list commands by typing `extension`. Pick `Extensions: Install Extension`.
+Select the `Extension for Titanium, Alloy and JAST` extension from the list
 
-** Enjoy!**
+
+## Manual Install
+
+**Mac & Linux**
+```sh
+cd $HOME/.vscode/extensions
+```
+**Windows**
+```sh
+cd %USERPROFILE%\.vscode\extensions
+```
+
+**All Platforms**
+```
+git clone https://github.com/dbankier/vscode-titanium.git
+cd vscode-titanium
+npm install
+```
+
+
+## Usage
+
+### Build Commands
+
+Press <kbd>F1</kbd> and enter one fo the following:
+
+~~~
+Titanium: build
+Titanium: shadow
+Titanium: appify
+Titanium: clean
+~~~
+
+Just follow the steps. Here is an example.
+
+![build](./build.gif)
+
+### Open Splits
+Use <kbd>CMD</kbd>+<kbd>L</kbd> or <kbd>CTRL</kbd>+<kbd>L</kbd> to open alloy splits.
+
+![splits](./splits.gif)
+
+By default the plug assumes you are using [JAST](https://github.com/dbankier/JAST).
+
+You can use the following configuration options to modify the default extensions.
+
+~~~
+				"alloy.style": ".tss"
+				"alloy.view": ".xml",
+				"alloy.controller":  ".js"
+~~~
+
+
+## Keybord Shortcut
+
+The following are the commands that you can assign shortcuts to:
+
+~~~
+extension.openAlloyFiles
+extension.tiBuild
+extension.tiBuildShadow
+extension.tiBuildAppify
+extension.tiClean
+~~~
+
+## Future
+To Do (maybe):
+  * TSS/STSS syntax highlight and completion
+  * Integrate [titanium-typescript](https://github.com/airamrguez/titanium-typescript) for `js` completion
+
+## License
+
+MIT © [David Bankier @dbankier](https://github.com/dbankier)
+[@davidbankier](https://twitter.com/davidbankier)
