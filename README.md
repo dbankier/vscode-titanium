@@ -45,7 +45,7 @@ Just follow the steps. Here is an example.
 ### Open Splits
 Use <kbd>CMD</kbd>+<kbd>L</kbd> or <kbd>CTRL</kbd>+<kbd>L</kbd> to open alloy splits.
 
-![splits](./screen/splits.gif)
+![splits](./screens/splits.gif)
 
 By default the plug assumes you are using [JAST](https://github.com/dbankier/JAST).
 
