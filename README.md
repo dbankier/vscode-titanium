@@ -40,12 +40,12 @@ Titanium: clean
 
 Just follow the steps. Here is an example.
 
-![build](./build.gif)
+![build](./screens/build.gif)
 
 ### Open Splits
 Use <kbd>CMD</kbd>+<kbd>L</kbd> or <kbd>CTRL</kbd>+<kbd>L</kbd> to open alloy splits.
 
-![splits](./splits.gif)
+![splits](./screen/splits.gif)
 
 By default the plug assumes you are using [JAST](https://github.com/dbankier/JAST).
 
