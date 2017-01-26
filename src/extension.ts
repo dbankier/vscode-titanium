@@ -21,8 +21,7 @@ export function activate(context: vscode.ExtensionContext) {
     console.log(regex.toString());
     const style_file = file_name.replace(/controllers/, "styles").replace(regex, config["style"]);
     const view_file = file_name.replace(/controllers/, "views").replace(regex, config["view"]);
-    return vscode.commands.executeCommand("workbench.action.closeOtherEditors")
-    .then(() =>vscode.workspace.openTextDocument(style_file))
+    return vscode.workspace.openTextDocument(style_file)
     .then(doc=> vscode.window.showTextDocument(doc, 2, true) )
 
     .then(() =>vscode.workspace.openTextDocument(view_file))
