@@ -23,10 +23,10 @@ export function activate(context: vscode.ExtensionContext) {
     const view_file = file_name.replace(/controllers/, "views").replace(regex, config["view"]);
     return vscode.commands.executeCommand("workbench.action.closeOtherEditors")
     .then(() =>vscode.workspace.openTextDocument(style_file))
-    .then(doc=> vscode.window.showTextDocument(doc, 2, true) )
+    .then((doc:vscode.TextDocument)=> vscode.window.showTextDocument(doc, 2, true) )
 
     .then(() =>vscode.workspace.openTextDocument(view_file))
-    .then(doc=> vscode.window.showTextDocument(doc, 3, true))
+    .then((doc:vscode.TextDocument)=> vscode.window.showTextDocument(doc, 3, true))
     .then(() => console.log("done"), (e) => console.error(e));
 	}));
 
