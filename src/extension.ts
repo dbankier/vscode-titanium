@@ -22,15 +22,11 @@ export function activate(context: vscode.ExtensionContext) {
     const style_file = file_name.replace(/controllers/, "styles").replace(regex, config["style"]);
     const view_file = file_name.replace(/controllers/, "views").replace(regex, config["view"]);
     return vscode.commands.executeCommand("workbench.action.closeOtherEditors")
-    .then(() => vscode.commands.executeCommand("workbench.action.splitEditor"))
     .then(() =>vscode.workspace.openTextDocument(style_file))
-    .then(doc=> vscode.window.showTextDocument(doc) )
-    .then(() => vscode.commands.executeCommand("workbench.action.focusFirstEditor"))
-    .then(() => new Promise((r,j) => setTimeout(r,500)))
-    .then(() => vscode.commands.executeCommand("workbench.action.splitEditor"))
-    .then(() => vscode.commands.executeCommand("workbench.action.focusFirstEditor"))
+    .then(doc=> vscode.window.showTextDocument(doc, 2, true) )
+
     .then(() =>vscode.workspace.openTextDocument(view_file))
-    .then(doc=> vscode.window.showTextDocument(doc))
+    .then(doc=> vscode.window.showTextDocument(doc, 3, true))
     .then(() => console.log("done"), (e) => console.error(e));
 	}));
 
