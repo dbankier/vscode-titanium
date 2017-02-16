@@ -67,7 +67,18 @@
           "description": "Alloy controller file extension"
         }
       }
-    }
+    },
+    "languages": [{
+      "id": "tss",
+      "aliases": ["TSS", "tss"],
+      "extensions": [".tss"],
+      "configuration": "./TSS.json"
+    }],
+      "grammars": [{
+      "language": "tss",
+      "scopeName": "source.tss",
+      "path": "./syntaxes/TSS.tmLanguage"
+    }]
   },
   "scripts": {
     "vscode:prepublish": "tsc -p ./",
