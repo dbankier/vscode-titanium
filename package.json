@@ -2,10 +2,10 @@
   "name": "vscode-titanium",
   "displayName": "Extension for Titanium, Alloy and JAST",
   "description": "Extension for Titanium, Alloy and JAST",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "publisher": "dbankier",
   "engines": {
-    "vscode": "^0.10.1"
+    "vscode": "^1.0.3"
   },
   "categories": [
     "Other"
@@ -48,34 +48,36 @@
       }
     ],
     "configuration": {
-			"type": "object",
-			"title": "Alloy Configuration",
-			"properties": {
-				"alloy.style": {
-					"type": "string",
-					"default": ".stss",
-					"description": "Alloy style file extension"
-				},
-				"alloy.view": {
-					"type": "string",
-					"default": ".jade",
-					"description": "Alloy view file extension"
-				},
-				"alloy.controller": {
-					"type": "string",
-					"default": ".js",
-					"description": "Alloy controller file extension"
-				}
+      "type": "object",
+      "title": "Alloy Configuration",
+      "properties": {
+        "alloy.style": {
+          "type": "string",
+          "default": ".stss",
+          "description": "Alloy style file extension"
+        },
+        "alloy.view": {
+          "type": "string",
+          "default": ".jade",
+          "description": "Alloy view file extension"
+        },
+        "alloy.controller": {
+          "type": "string",
+          "default": ".js",
+          "description": "Alloy controller file extension"
+        }
       }
     }
   },
   "scripts": {
-    "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
-    "compile": "node ./node_modules/vscode/bin/compile -watch -p ./"
+    "vscode:prepublish": "tsc -p ./",
+    "compile": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install"
   },
   "devDependencies": {
-    "typescript": "^1.6.2",
-    "vscode": "0.10.x"
+    "typescript": "^2.0.3",
+    "vscode": "^1.0.0",
+    "@types/node": "^6.0.40"
   },
   "dependencies": {
     "shelljs": "^0.5.3"
