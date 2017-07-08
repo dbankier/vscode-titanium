@@ -2,7 +2,7 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 import {BuildOption, TiBuild} from './lib/TiBuild'
-
+import * as alloy from './lib/alloy'
 
 export function activate(context: vscode.ExtensionContext) {
 
@@ -30,6 +30,15 @@ export function activate(context: vscode.ExtensionContext) {
     .then(() => console.log("done"), (e) => console.error(e));
 	}));
 
+  context.subscriptions.push(vscode.commands.registerCommand('extension.openAlloyView', () => {
+    return alloy.openComponent('view');
+  }));
+  context.subscriptions.push(vscode.commands.registerCommand('extension.openAlloyController', () => {
+    return alloy.openComponent('controller');
+  }));
+  context.subscriptions.push(vscode.commands.registerCommand('extension.openAlloyStyle', () => {
+    return alloy.openComponent('style');
+  }));
   context.subscriptions.push(vscode.commands.registerCommand('extension.tiBuild', () => {
     return new TiBuild(BuildOption.Normal).launch();
 	}));
