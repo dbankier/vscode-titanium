@@ -21,6 +21,18 @@
         "title": "Alloy: Open Relative Files"
       },
       {
+        "command": "extension.openAlloyController",
+        "title": "Alloy: Open Relative Controller"
+      },
+      {
+        "command": "extension.openAlloyView",
+        "title": "Alloy: Open Relative View"
+      },
+      {
+        "command": "extension.openAlloyStyle",
+        "title": "Alloy: Open Relative Style"
+      },
+      {
         "command": "extension.tiBuild",
         "title": "Titanium: build"
       },
@@ -40,11 +52,23 @@
     "keybindings": [
       {
         "command": "extension.openAlloyFiles",
-        "key": "ctrl+l"
+        "key": "ctrl+l",
+        "mac": "cmd+l"
       },
       {
-        "command": "extension.openAlloyFiles",
-        "key": "cmd+l"
+        "command": "extension.openAlloyController",
+        "key": "ctrl+shift+c",
+        "mac": "cmd+shift+c"
+      },
+      {
+        "command": "extension.openAlloyView",
+        "key": "ctrl+shift+v",
+        "mac": "cmd+shift+v"
+      },
+      {
+        "command": "extension.openAlloyStyle",
+        "key": "ctrl+shift+s",
+        "mac": "cmd+shift+s"
       }
     ],
     "configuration": {
